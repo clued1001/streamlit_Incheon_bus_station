@@ -3,9 +3,9 @@ from home import run_home
 from eda import run_eda
 from ml import run_ml
 def main():
-    st.title('버스 정류장별 예측 앱')
+    st.title('인천광역시 버스 정류장별 예측 앱')
     
-    menu = ['Home', 'EDA', 'ML']
+    menu = ['메인', '통계', '예측']
     
     choice = st.sidebar.selectbox('메뉴', menu)
     
