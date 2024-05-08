@@ -8,6 +8,6 @@ def run_home():
     url = 'https://cdn.safetimes.co.kr/news/photo/202106/96020_76507_2517.jpg'
     st.image(url, use_column_width= True)
     
-    st.text('')
+    
     st.text('사진 출처 : https://www.safetimes.co.kr/news/articleView.html?idxno=96020')
     st.text('데이터 출처 : https://data.incheon.go.kr/findData/publicDataDetail?dataId=15048264&srcSe=7661IVAWM27C61E190')
