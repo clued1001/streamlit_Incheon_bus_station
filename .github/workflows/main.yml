@@ -25,13 +25,3 @@ jobs:
             git pull
   # 깃허브 레파지토리가 프라이빗으로 만들어져 있을때. 
   # git pull https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PASSWORD }}@github.com/blockenters/streamlit_kmeans.git
-  GetPrivateRepo:
-    needs: SSH
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout private repo
-        uses: actions/checkout@v2
-        with:
-          repository: blockenters/streamlit_kmeans
-          token: ${{ secrets.GITHUB_TOKEN }}
