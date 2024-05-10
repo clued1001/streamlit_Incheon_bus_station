@@ -22,9 +22,7 @@ def run_eda():
     elif choice_radio == radio_menu[1] :
         st.dataframe(df.describe())
         
-    # 각 컬럼별로 최대/최소 값을 보여주는 화면 개발.
-    # 유저가 컬럼을 선택하면, 해당 컬럼의 최대/최소 데이터를 보여주도록 하자.
-    
+            
     st.text('컬럼을 선택하면, 각 컬럼별 최대/최소 데이터를 보여드립니다.')
     column_list = ['승차건수(총합계)', '하차건수(총합계)', '승차건수(카드)', '하차건수(카드)','승차건수(현금)','일평균 승하차건수']
     choice_column = st.selectbox('컬럼을 선택하세요', column_list)
@@ -41,13 +39,11 @@ def run_eda():
     corr_column_list = ['승차건수(총합계)', '하차건수(총합계)', '승차건수(카드)', '하차건수(카드)','승차건수(현금)','일평균 승하차건수']
     selected_columns = st.multiselect('컬럼을 선택하세요.', corr_column_list)
     
-    # 2개 이상 선택했을 때와 그렇지 않을때로 개발
     if len(selected_columns) >= 2 :
-        # 1. 페어플롯을 그린다.
+
         fig1 = sb.pairplot(data= df, vars= selected_columns)
         st.pyplot(fig1)
         
-        # 2. 상관계수 보여준다.
         st.dataframe(df[selected_columns].corr())
         
         
